@@ -17,8 +17,8 @@ It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 BuildRequires:  pkgconfig(python2)
-BuildRequires:  pythonegg(2)(setuptools)
-Conflicts:      python-pycrypto
+BuildRequires:  pythonegg(setuptools)
+Conflicts:      python2-pycrypto
 
 %description -n python2-%{upstream_name}
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
@@ -27,9 +27,9 @@ It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 %package -n     python3-%{upstream_name}
 Summary:        Cryptographic library for Python
 Group:          Development/Python
-BuildRequires:  pkgconfig(python3)
-BuildRequires:  pythonegg(3)(setuptools)
-Conflicts:      python3-pycrypto
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python3egg(setuptools)
+Conflicts:      python-pycrypto
 
 %description -n python3-%{upstream_name}
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
