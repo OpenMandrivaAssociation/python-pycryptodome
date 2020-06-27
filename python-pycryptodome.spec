@@ -1,7 +1,7 @@
 %define upstream_name pycryptodome
 
 Name:           python-%{upstream_name}
-Version:	3.9.7
+Version:	3.9.8
 Release:	1
 Summary:        Cryptographic library for Python
 Group:          Development/Python
@@ -13,25 +13,21 @@ Source0:        https://github.com/Legrandin/pycryptodome/archive/v%{version}/%{
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
 It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 
+
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python3dist(setuptools)
+Conflicts:      python-pycrypto
+Provides:       python3-%{upstream_name}
+
+
 %package -n     python2-%{upstream_name}
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 BuildRequires:  pkgconfig(python2)
-BuildRequires:  pythonegg(setuptools)
+BuildRequires:  python2dist(setuptools)
 Conflicts:      python2-pycrypto
 
 %description -n python2-%{upstream_name}
-PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
-It supports Python 2.4 or newer, all Python 3 versions and PyPy.
-
-%package -n     python3-%{upstream_name}
-Summary:        Cryptographic library for Python
-Group:          Development/Python
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3egg(setuptools)
-Conflicts:      python-pycrypto
-
-%description -n python3-%{upstream_name}
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
 It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 
@@ -40,16 +36,16 @@ It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 
 %build
 %py2_build
-%py3_build
+%py_build
 
 %install
 %py2_install
-%py3_install
+%py_install
+
+%files
+%{python_sitearch}/Crypto
+%{python_sitearch}/pycryptodome-%{version}-py%{python_version}.egg-info
 
 %files -n python2-%{upstream_name}
 %{python2_sitearch}/Crypto
 %{python2_sitearch}/pycryptodome-%{version}-py%{python2_version}.egg-info
-
-%files -n python3-%{upstream_name}
-%{python3_sitearch}/Crypto
-%{python3_sitearch}/pycryptodome-%{version}-py%{python3_version}.egg-info
