@@ -2,30 +2,27 @@
 
 Name:           python-%{upstream_name}
 Version:	3.9.8
-Release:	1
+Release:	2
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 License:        MIT
 URL:            https://pypi.python.org/pypi/pycryptodome
 Source0:        https://github.com/Legrandin/pycryptodome/archive/v%{version}/%{upstream_name}-%{version}.tar.gz
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python3dist(setuptools)
+Provides:       python3-%{upstream_name}
+%rename python-pycrypto
 
 %description
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
 It supports Python 2.4 or newer, all Python 3 versions and PyPy.
-
-
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
-Conflicts:      python-pycrypto
-Provides:       python3-%{upstream_name}
-
 
 %package -n     python2-%{upstream_name}
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 BuildRequires:  pkgconfig(python2)
 BuildRequires:  python2dist(setuptools)
-Conflicts:      python2-pycrypto
+%rename python2-pycrypto
 
 %description -n python2-%{upstream_name}
 PyCryptodome is a self-contained Python package of low-level cryptographic primitives.
