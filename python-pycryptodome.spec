@@ -1,7 +1,7 @@
 %define upstream_name pycryptodome
 
 Name:           python-%{upstream_name}
-Version:	3.9.9
+Version:	3.11.0
 Release:	1
 Summary:        Cryptographic library for Python
 Group:          Development/Python
