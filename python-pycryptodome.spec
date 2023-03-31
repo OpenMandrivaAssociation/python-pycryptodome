@@ -2,7 +2,7 @@
 
 Name:           python-%{upstream_name}
 Version:	3.16.0
-Release:	1
+Release:	2
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 License:        MIT
