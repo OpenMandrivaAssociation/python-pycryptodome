@@ -1,8 +1,8 @@
 %define upstream_name pycryptodome
 
 Name:           python-%{upstream_name}
-Version:	3.16.0
-Release:	2
+Version:	3.21.0
+Release:	1
 Summary:        Cryptographic library for Python
 Group:          Development/Python
 License:        MIT
@@ -41,7 +41,7 @@ It supports Python 2.4 or newer, all Python 3 versions and PyPy.
 
 %files
 %{python_sitearch}/Crypto
-%{python_sitearch}/pycryptodome-%{version}-py%{python_version}.egg-info
+%{python_sitearch}/pycryptodome-%{version}.dist-info/
 
 %files -n python2-%{upstream_name}
 %{python2_sitearch}/Crypto
