@@ -9,7 +9,8 @@ License:        MIT
 URL:            https://pypi.python.org/pypi/pycryptodome
 Source0:        https://github.com/Legrandin/pycryptodome/archive/v%{version}/%{upstream_name}-%{version}.tar.gz
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
+BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(pip)
 Provides:       python3-%{upstream_name}
 %rename python-pycrypto
 
